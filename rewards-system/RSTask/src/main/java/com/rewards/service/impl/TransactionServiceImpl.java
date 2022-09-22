@@ -37,7 +37,7 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public TransactionDTO saveUpdateTransaction(TransactionDTO transactionDTO){
         log.info("saveUpdateTransaction method started Purchase value :: "+transactionDTO.getAmount());
-
+        ModelMapper modelMapper = new ModelMapper();
         UserDTO userDTO = transactionDTO.getUserDTO();
         if(userDTO ==null){
             throw new UserNotFoundException("Without Customer Transaction would not Happen");
